@@ -1,0 +1,8 @@
+{
+  "name": "Tech Shop",
+  "short_name": "TechShop",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "VR 헤드셋 전문 쇼핑몰"
+}
