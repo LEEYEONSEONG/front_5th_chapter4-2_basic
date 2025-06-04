@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Tech Shop</title>
     <link
-      href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap"
       rel="preload"
+      href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap"
       as="style"
+      onload="this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap"
+      />
+    </noscript>
+    <meta
+      name="description"
+      content="VR 헤드셋 전문 쇼핑몰, Tech Shop, 최신 VR 기기와 액세서리 판매"
+    />
+    <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" href="/css/styles.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="/css/slick.css"/> -->
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -103,9 +114,27 @@
     </header>
 
     <section class="hero">
-      <img class="desktop" src="images/Hero_Desktop.webp" />
-      <img class="mobile" src="images/Hero_Mobile.webp" />
-      <img class="tablet" src="images/Hero_Tablet.webp" />
+      <img
+        class="desktop"
+        src="images/Hero_Desktop.webp"
+        width="1440"
+        height="600"
+        alt="VR Headset Hero Desktop"
+      />
+      <img
+        class="mobile"
+        src="images/Hero_Mobile.webp"
+        width="600"
+        height="800"
+        alt="VR Headset Hero Mobile"
+      />
+      <img
+        class="tablet"
+        src="images/Hero_Tablet.webp"
+        width="1024"
+        height="600"
+        alt="VR Headset Hero Tablet"
+      />
 
       <div class="hero-content">
         <div class="container">
@@ -128,7 +157,12 @@
         <div class="container">
           <div class="product new">
             <div class="product-picture">
-              <img src="images/vr1.webp" alt="product: Penom Case" />
+              <img
+                src="images/vr1.webp"
+                alt="product: Penom Case"
+                width="250"
+                height="250"
+              />
             </div>
             <div class="product-info">
               <h5 class="categories">Headsets, Apple</h5>
@@ -145,6 +179,8 @@
               <img
                 src="images/vr2.webp"
                 alt="product: Noise Cancelling Headphone"
+                width="250"
+                height="250"
               />
             </div>
             <div class="product-info">
@@ -162,6 +198,8 @@
               <img
                 src="images/vr3.webp"
                 alt="product: Canon Digital SLR EOS Rebel T6"
+                width="250"
+                height="250"
               />
             </div>
             <div class="product-info">
@@ -242,5 +280,12 @@
 
     <script type="text/javascript" src="/js/main.js" defer></script>
     <script type="text/javascript" src="/js/products.js" defer></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js");
+        });
+      }
+    </script>
   </body>
 </html>
