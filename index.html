@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#33c6dd" />
+    <meta
+      name="description"
+      content="VR 헤드셋 전문 쇼핑몰, Tech Shop, 최신 VR 기기와 액세서리 판매"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Home - Tech Shop</title>
     <link
       rel="preload"
@@ -17,10 +25,6 @@
         href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap"
       />
     </noscript>
-    <meta
-      name="description"
-      content="VR 헤드셋 전문 쇼핑몰, Tech Shop, 최신 VR 기기와 액세서리 판매"
-    />
     <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" href="/css/styles.css" />
     <link
@@ -49,19 +53,28 @@
     <header>
       <div class="container">
         <section class="logo">
-          <a href="index.html">
+          <a href="index.html" aria-label="홈으로 이동">
             <strong>VR</strong>
-            <span class="blue-dot"></span>
-            <span class="blue-dot"></span>
+            <span class="blue-dot" aria-hidden="true"></span>
+            <span class="blue-dot" aria-hidden="true"></span>
             <span>Headsets</span>
           </a>
         </section>
-        <nav>
+        <nav aria-label="메인 네비게이션">
           <ul>
             <li><a href="about.html">About us</a></li>
             <li><a href="index.html#best-sellers-section">Best Sellers</a></li>
             <li><a href="index.html#newsletter-section">Newsletter</a></li>
-            <li class="menu-icon"><img src="images/menu_icon.webp" /></li>
+            <li class="menu-icon">
+              <button aria-label="메뉴 열기">
+                <img
+                  src="images/menu_icon.webp"
+                  alt="메뉴 아이콘"
+                  width="24"
+                  height="24"
+                />
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -184,8 +197,14 @@
     <section class="newsletter" id="newsletter-section">
       <h3>Newsletter Signup</h3>
       <p>Subscribe now and don't miss a single deal!</p>
-      <form>
-        <input type="email" name="email" placeholder="Your email..." />
+      <form aria-label="뉴스레터 구독">
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email..."
+          aria-label="이메일 주소"
+          required
+        />
         <button type="submit">Subscribe</button>
       </form>
     </section>
@@ -195,11 +214,11 @@
         <div class="container">
           <ul>
             <li class="list-title">Categories</li>
-            <li><a href="#">Watches</a></li>
-            <li><a href="#">Cameras</a></li>
-            <li><a href="#">Phones</a></li>
-            <li><a href="#">Tablets</a></li>
-            <li><a href="#">Computers</a></li>
+            <li><a href="#" aria-label="시계 카테고리">Watches</a></li>
+            <li><a href="#" aria-label="카메라 카테고리">Cameras</a></li>
+            <li><a href="#" aria-label="휴대폰 카테고리">Phones</a></li>
+            <li><a href="#" aria-label="태블릿 카테고리">Tablets</a></li>
+            <li><a href="#" aria-label="컴퓨터 카테고리">Computers</a></li>
           </ul>
 
           <ul>

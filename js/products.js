@@ -12,8 +12,12 @@ async function loadProducts() {
 
 function displayProducts() {
   const container = document.querySelector("#all-products .container");
+  if (!container) return;
+
   const start = (currentPage - 1) * pageSize;
   const end = start + pageSize;
+  const fragment = document.createDocumentFragment();
+
   products.slice(start, end).forEach((product) => {
     const productElement = document.createElement("div");
     productElement.classList.add("product");
@@ -22,9 +26,11 @@ function displayProducts() {
     pictureDiv.classList.add("product-picture");
     const img = document.createElement("img");
     img.src = product.image;
-    img.alt = `product: ${product.title}`;
+    img.alt = `${product.title} - ${product.category}`;
     img.width = 250;
+    img.height = 250;
     img.loading = "lazy";
+    img.decoding = "async";
     pictureDiv.appendChild(img);
 
     const infoDiv = document.createElement("div");
@@ -46,6 +52,7 @@ function displayProducts() {
 
     const button = document.createElement("button");
     button.textContent = "Add to bag";
+    button.setAttribute("aria-label", `${product.title} 장바구니에 추가`);
 
     infoDiv.appendChild(category);
     infoDiv.appendChild(title);
@@ -54,8 +61,10 @@ function displayProducts() {
 
     productElement.appendChild(pictureDiv);
     productElement.appendChild(infoDiv);
-    container.appendChild(productElement);
+    fragment.appendChild(productElement);
   });
+
+  container.appendChild(fragment);
   isLoading = false;
 }
 
